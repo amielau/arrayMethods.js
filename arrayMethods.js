@@ -18,7 +18,9 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 // CODE HERE
-const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+const evenNumbers = mixedNumbers.filter((number) => number % 2 === 0);
+console.log(evenNumbers);
+// = mixedNumbers.filter(/* Provide Your Callback Here */)
 
 
 
@@ -29,17 +31,23 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 // Do not edit the code above.
 
 /*
-  Use the map method on the prices array to calculate a new array of post-tax prices.
+  Use the map method on the prices array to calculate a new array of post-tax 
+  prices.
   Use a 7% tax rate.
-  Math reminder! To calculate the price after tax, multiply the price by 1 plus the taxRate as a decimal.
-  Example: if tax is 7%, the price afterTax could be calculated like this: afterTax = price * 1.07) 
+  Math reminder! To calculate the price after tax, multiply the price by 1 plus
+   the taxRate as a decimal.
+  Example: if tax is 7%, the price afterTax could be calculated like this: 
+  afterTax = price * 1.07) 
   The map function also takes a callback with the parameters
   function(element, index, wholeArray){}  Function Form
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
 // CODE HERE
-const postTaxPrices // = prices.map(/* Provide Your Callback Here );
+const postTaxPrices = prices.map((cost) => Number ((cost * 1.07).toFixed(2)));
+  console.log(postTaxPrices);
+
+
 
 
 
@@ -57,7 +65,10 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+const totalPopulation = populations.reduce((preVal, currVal) => preVal + currVal
+);
+console.log(totalPopulation);
+//  = populations.reduce(/* Provide Your Callback Here */)
 
 
 
