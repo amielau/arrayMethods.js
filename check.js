@@ -57,3 +57,53 @@ purchases.forEach((value) => {
 });
 
 console.log(bobsTotal.reduce((preVal, currVal) => preVal + currVal));
+
+// CALLBACK //
+
+// problem 1 //
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+const multiply = (x, y, answer) => {
+    answer(x, y);
+  };
+  const answer = (x, y) => {
+    const answer = x * y;
+    console.log(`The answer is ${answer}`); //should console.log 12
+  };
+  multiply(3, 4, answer);
+  // })
+  
+  //problem 2//
+
+  const first = (arr, callback) => {
+    arr.forEach((whatever) => callback(whatever));
+  };
+  
+  const callback = (whatever) => {
+    console.log(whatever);
+  };
+  first(names, callback);
+
+  // problem 3 //
+
+  const last = (arr, callback) => {
+    arr.forEach((lastName) => callback(lastName));
+  };
+  const lastCallback = (lastName) => {
+    console.log('The last name in names is ' + lastName)
+  };
+   last(names, lastCallback);
+
+
+   // problem 4 //
+   const contains = (arr, name, callback) => {
+    const checkTheArr = arr.filter((item) => item === name) 
+    checkTheArr.length > 0 ? newCallBack(true) : newCallBack(false);
+  };
+  const newCallBack = (check) => {
+    console.log(check);
+  };
+  
+  contains(names, 'Amie', newCallBack);
+
+  

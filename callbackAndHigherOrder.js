@@ -12,8 +12,16 @@
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// multiply(4, 3, answer => {
-//   console.log('The answer is ' + answer) //should console.log 12
+
+
+const multiply = (x, y, answer) => {
+  answer(x, y);
+};
+const answer = (x, y) => {
+  const answer = x * y;
+  console.log(`The answer is ${answer}`); //should console.log 12
+};
+multiply(3, 4, answer);
 // })
 
 
@@ -36,7 +44,14 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
+const first = (arr, callback) => {
+  arr.forEach((whatever) => callback(whatever));
+};
 
+const callback = (whatever) => {
+  console.log(whatever);
+};
+first(names, callback);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -56,14 +71,20 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+const last = (arr, callback) => {
+  arr.forEach((lastName) => callback(lastName));
+};
+const lastCallback = (lastName) => {
+  console.log('The last name in names is ' + lastName)
+};
+ last(names, lastCallback);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// last(names, lastName => {
-//   console.log('The last name in names is ' + lastName)
+ //last(names, lastName => {
+   //console.log('The last name in names is ' + lastName)
 // })
 
 
@@ -78,6 +99,16 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
+const contains = (arr, name, callback) => {
+  const checkTheArr = arr.filter((item) => item === name) 
+  checkArr.length > 0 ? callBack(true) : callBack(false);
+};
+const newCallback = (check) => {
+  console.log(check);
+};
+
+contains(names, 'Amie', newCallback);
+
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
