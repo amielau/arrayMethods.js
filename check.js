@@ -38,3 +38,22 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 
 const orderTotals = orders.map((val) => Number ((val.price * val.tax + val.price).toFixed(2)));
 console.log(orderTotals);
+
+// problem 6 //
+const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
+{"owner":"Bob","price":73},{"owner":"Barry","price":57},{"owner":"Barry","price":128},
+{"owner":"Bob","price":119},{"owner":"Barry","price":133},{"owner":"Barry","price":27},
+{"owner":"Barry","price":138},{"owner":"Bob","price":68},{"owner":"Bob","price":50},
+{"owner":"Barry","price":9},{"owner":"Bob","price":123},{"owner":"Bob","price":135},
+{"owner":"Barry","price":30},{"owner":"Barry","price":129},{"owner":"Barry","price":38},
+{"owner":"Bob","price":133},{"owner":"Barry","price":109},{"owner":"Bob","price":115}];
+// Do not edit the code above.
+
+const bobsTotal = []
+purchases.forEach((value) => {
+    if(value.owner === 'Bob') {
+        bobsTotal.push(value.price);
+    }
+});
+
+console.log(bobsTotal.reduce((preVal, currVal) => preVal + currVal));
